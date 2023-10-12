@@ -12,8 +12,41 @@ export default class UserInterface {
         context.shadowOffsetY = 2
         context.shadowColor = 'black'
 
+        context.textAlign = 'left'
+        context.font = `${this.fontSize}px ${this.fontFamily}`
+        context.fillText(
+          `Time: ${(this.game.gameTime * 0.001).toFixed(1)}`,
+          20,
+          100
+        )
+
+        if (this.game.gameOver) {
+            context.textAlign = 'center'
+            context.font = `50px ${this.fontFamily}`
+            context.fillText(
+              'Game over',
+              this.game.width / 2,
+              this.game.height / 2 - 20
+            )
+          }
+
+            // debug
+    if (this.game.debug) {
+        // ...
+      }
+  
+      context.restore()
+    
+  
+
+
+
+
+
+
 
     }
+
 
 
 
